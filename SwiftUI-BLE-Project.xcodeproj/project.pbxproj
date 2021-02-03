@@ -70,10 +70,8 @@
 		7134F37925C93B7D00DAD350 /* CoreBluetooth */ = {
 			isa = PBXGroup;
 			children = (
-				7134F36A25C934A800DAD350 /* Peripheral.swift */,
-				7134F38225C93B7D00DAD350 /* Characteristic.swift */,
-				7134F3A825CA3AC900DAD350 /* Services.swift */,
 				7134F38125C93B7D00DAD350 /* CBPeripheralProtcolDelegate.swift */,
+				7134F3BE25CA414800DAD350 /* Store */,
 				7134F37B25C93B7D00DAD350 /* Mock */,
 			);
 			path = CoreBluetooth;
@@ -82,10 +80,10 @@
 		7134F37B25C93B7D00DAD350 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				7134F37F25C93B7D00DAD350 /* Mock.swift */,
 				7134F38025C93B7D00DAD350 /* CBPeripheralMock.swift */,
 				7134F39825C940DB00DAD350 /* ServiceCharacteristicsMock.swift */,
 				7134F37C25C93B7D00DAD350 /* CBCentralManagerMock.swift */,
-				7134F37F25C93B7D00DAD350 /* Mock.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -105,6 +103,16 @@
 				7134F39225C93FE100DAD350 /* CoreBluetoothViewModelExtension.swift */,
 			);
 			path = CoreBluetooth;
+			sourceTree = "<group>";
+		};
+		7134F3BE25CA414800DAD350 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				7134F36A25C934A800DAD350 /* Peripheral.swift */,
+				7134F38225C93B7D00DAD350 /* Characteristic.swift */,
+				7134F3A825CA3AC900DAD350 /* Services.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 		715D90D725C9086500F19093 = {
