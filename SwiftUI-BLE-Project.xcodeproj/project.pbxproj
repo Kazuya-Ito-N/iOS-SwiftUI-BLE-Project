@@ -16,6 +16,7 @@
 		7134F39325C93FE100DAD350 /* CoreBluetoothViewModelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134F39225C93FE100DAD350 /* CoreBluetoothViewModelExtension.swift */; };
 		7134F39925C940DC00DAD350 /* ServiceCharacteristicsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134F39825C940DB00DAD350 /* ServiceCharacteristicsMock.swift */; };
 		7134F3A925CA3AC900DAD350 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134F3A825CA3AC900DAD350 /* Services.swift */; };
+		7134F3B625CA3F4300DAD350 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7134F3B025CA3F4300DAD350 /* README.md */; };
 		715D90E425C9086500F19093 /* SwiftUI_BLE_ProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D90E325C9086500F19093 /* SwiftUI_BLE_ProjectApp.swift */; };
 		715D90E625C9086500F19093 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D90E525C9086500F19093 /* ContentView.swift */; };
 		715D90E825C9086700F19093 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 715D90E725C9086700F19093 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		7134F39225C93FE100DAD350 /* CoreBluetoothViewModelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreBluetoothViewModelExtension.swift; sourceTree = "<group>"; };
 		7134F39825C940DB00DAD350 /* ServiceCharacteristicsMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCharacteristicsMock.swift; sourceTree = "<group>"; };
 		7134F3A825CA3AC900DAD350 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		7134F3B025CA3F4300DAD350 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		715D90E025C9086500F19093 /* SwiftUI-BLE-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-BLE-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		715D90E325C9086500F19093 /* SwiftUI_BLE_ProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_BLE_ProjectApp.swift; sourceTree = "<group>"; };
 		715D90E525C9086500F19093 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		715D90D725C9086500F19093 = {
 			isa = PBXGroup;
 			children = (
+				7134F3B025CA3F4300DAD350 /* README.md */,
 				715D90E225C9086500F19093 /* SwiftUI-BLE-Project */,
 				715D90E125C9086500F19093 /* Products */,
 			);
@@ -226,6 +229,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7134F3B625CA3F4300DAD350 /* README.md in Resources */,
 				715D90EB25C9086700F19093 /* Preview Assets.xcassets in Resources */,
 				715D90E825C9086700F19093 /* Assets.xcassets in Resources */,
 			);
