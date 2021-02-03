@@ -2,8 +2,10 @@ import Foundation
 import CoreBluetooth
 
 class ServiceCharacteristicsMock {
+    private var value: Data = Data([UInt8(0x00)])
+    
     private let serviceUuid: CBUUID = CBUUID(string: "00112233-4455-6677-8899-AABBCCDDEEFF")
-    private let characteristic: CBUUID = CBUUID(string: "10112233-4455-6677-8899-AABBCCDDEEFF")
+    private let characteristicUuid: CBUUID = CBUUID(string: "10112233-4455-6677-8899-AABBCCDDEEFF")
     
 	public func service() -> [CBMutableService] {
 		return [
@@ -15,7 +17,7 @@ class ServiceCharacteristicsMock {
 		switch serviceUUID {
 		case serviceUuid:
 			return [
-				mutableCharacteristic(uuid: characteristic),
+				mutableCharacteristic(uuid: characteristicUuid),
 			]
 		default:
 			return []
@@ -31,12 +33,22 @@ class ServiceCharacteristicsMock {
 
 	public func value(uuid: CBUUID) -> Data {
 		switch uuid {
-		case characteristic:
-			return Data([UInt8(0x01)])
+		case characteristicUuid:
+			return value
 		
 		default:
 			return Data()
 		}
 	}
+    
+    public func writeValue(uuid: CBUUID, writeValue: Data) {
+        switch uuid {
+        case characteristicUuid:
+            value = writeValue
+            
+        default:
+            break
+        }
+    }
 }
 

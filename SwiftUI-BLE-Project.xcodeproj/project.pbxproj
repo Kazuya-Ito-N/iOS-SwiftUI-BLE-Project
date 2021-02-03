@@ -15,8 +15,7 @@
 		7134F38A25C93B7D00DAD350 /* Characteristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134F38225C93B7D00DAD350 /* Characteristic.swift */; };
 		7134F39325C93FE100DAD350 /* CoreBluetoothViewModelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134F39225C93FE100DAD350 /* CoreBluetoothViewModelExtension.swift */; };
 		7134F39925C940DC00DAD350 /* ServiceCharacteristicsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134F39825C940DB00DAD350 /* ServiceCharacteristicsMock.swift */; };
-		7134F39D25C94F6900DAD350 /* PeripheralService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134F39C25C94F6900DAD350 /* PeripheralService.swift */; };
-		7134F3A125C94FD000DAD350 /* DeviceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134F3A025C94FD000DAD350 /* DeviceStatus.swift */; };
+		7134F3A925CA3AC900DAD350 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134F3A825CA3AC900DAD350 /* Services.swift */; };
 		715D90E425C9086500F19093 /* SwiftUI_BLE_ProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D90E325C9086500F19093 /* SwiftUI_BLE_ProjectApp.swift */; };
 		715D90E625C9086500F19093 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D90E525C9086500F19093 /* ContentView.swift */; };
 		715D90E825C9086700F19093 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 715D90E725C9086700F19093 /* Assets.xcassets */; };
@@ -35,8 +34,7 @@
 		7134F38225C93B7D00DAD350 /* Characteristic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Characteristic.swift; sourceTree = "<group>"; };
 		7134F39225C93FE100DAD350 /* CoreBluetoothViewModelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreBluetoothViewModelExtension.swift; sourceTree = "<group>"; };
 		7134F39825C940DB00DAD350 /* ServiceCharacteristicsMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCharacteristicsMock.swift; sourceTree = "<group>"; };
-		7134F39C25C94F6900DAD350 /* PeripheralService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeripheralService.swift; sourceTree = "<group>"; };
-		7134F3A025C94FD000DAD350 /* DeviceStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceStatus.swift; sourceTree = "<group>"; };
+		7134F3A825CA3AC900DAD350 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		715D90E025C9086500F19093 /* SwiftUI-BLE-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-BLE-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		715D90E325C9086500F19093 /* SwiftUI_BLE_ProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_BLE_ProjectApp.swift; sourceTree = "<group>"; };
 		715D90E525C9086500F19093 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,7 +61,6 @@
 			isa = PBXGroup;
 			children = (
 				7134F37925C93B7D00DAD350 /* CoreBluetooth */,
-				7134F39F25C94FC400DAD350 /* Store */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -73,7 +70,7 @@
 			children = (
 				7134F36A25C934A800DAD350 /* Peripheral.swift */,
 				7134F38225C93B7D00DAD350 /* Characteristic.swift */,
-				7134F39C25C94F6900DAD350 /* PeripheralService.swift */,
+				7134F3A825CA3AC900DAD350 /* Services.swift */,
 				7134F38125C93B7D00DAD350 /* CBPeripheralProtcolDelegate.swift */,
 				7134F37B25C93B7D00DAD350 /* Mock */,
 			);
@@ -83,9 +80,9 @@
 		7134F37B25C93B7D00DAD350 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				7134F38025C93B7D00DAD350 /* CBPeripheralMock.swift */,
 				7134F39825C940DB00DAD350 /* ServiceCharacteristicsMock.swift */,
 				7134F37C25C93B7D00DAD350 /* CBCentralManagerMock.swift */,
-				7134F38025C93B7D00DAD350 /* CBPeripheralMock.swift */,
 				7134F37F25C93B7D00DAD350 /* Mock.swift */,
 			);
 			path = Mock;
@@ -106,14 +103,6 @@
 				7134F39225C93FE100DAD350 /* CoreBluetoothViewModelExtension.swift */,
 			);
 			path = CoreBluetooth;
-			sourceTree = "<group>";
-		};
-		7134F39F25C94FC400DAD350 /* Store */ = {
-			isa = PBXGroup;
-			children = (
-				7134F3A025C94FD000DAD350 /* DeviceStatus.swift */,
-			);
-			path = Store;
 			sourceTree = "<group>";
 		};
 		715D90D725C9086500F19093 = {
@@ -252,8 +241,8 @@
 				7134F38725C93B7D00DAD350 /* Mock.swift in Sources */,
 				7134F38425C93B7D00DAD350 /* CBCentralManagerMock.swift in Sources */,
 				7134F38925C93B7D00DAD350 /* CBPeripheralProtcolDelegate.swift in Sources */,
+				7134F3A925CA3AC900DAD350 /* Services.swift in Sources */,
 				715D90E625C9086500F19093 /* ContentView.swift in Sources */,
-				7134F3A125C94FD000DAD350 /* DeviceStatus.swift in Sources */,
 				7134F36B25C934A800DAD350 /* Peripheral.swift in Sources */,
 				715D910325C9229000F19093 /* ScanListView.swift in Sources */,
 				7134F38825C93B7D00DAD350 /* CBPeripheralMock.swift in Sources */,
@@ -261,7 +250,6 @@
 				715D90E425C9086500F19093 /* SwiftUI_BLE_ProjectApp.swift in Sources */,
 				7134F39925C940DC00DAD350 /* ServiceCharacteristicsMock.swift in Sources */,
 				715D910725C9229A00F19093 /* ScanDetailView.swift in Sources */,
-				7134F39D25C94F6900DAD350 /* PeripheralService.swift in Sources */,
 				7134F38A25C93B7D00DAD350 /* Characteristic.swift in Sources */,
 				715D90F825C90B6C00F19093 /* CoreBluetoothViewModel.swift in Sources */,
 			);

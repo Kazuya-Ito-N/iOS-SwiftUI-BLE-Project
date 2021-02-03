@@ -64,7 +64,6 @@ class CBPeripheralMock: Mock, CBPeripheralProtocol {
             let delegate = delegate as? CBPeripheralProtocolDelegate
             else { return }
         
-        
         mutableCharacteristic.value = serviceCharacteristic.value(uuid: mutableCharacteristic.uuid)
         
         if let _ = mutableCharacteristic.value {
@@ -78,6 +77,22 @@ class CBPeripheralMock: Mock, CBPeripheralProtocol {
     
     func writeValue(_ data: Data, for characteristic: CBCharacteristic, type: CBCharacteristicWriteType) {
         log(#function)
+        
+        guard let mutableCharacteristic = characteristic as? CBMutableCharacteristic,
+            let delegate = delegate as? CBPeripheralProtocolDelegate
+            else { return }
+        
+        serviceCharacteristic.writeValue(uuid: mutableCharacteristic.uuid, writeValue: data)
+        
+        mutableCharacteristic.value = serviceCharacteristic.value(uuid: mutableCharacteristic.uuid)
+        
+        if let _ = mutableCharacteristic.value {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                delegate.didUpdateValue(self,
+                                        characteristic: characteristic,
+                                        error: nil)
+            }
+        }
     }
     
     func setNotifyValue(_ enabled: Bool, for characteristic: CBCharacteristic) {

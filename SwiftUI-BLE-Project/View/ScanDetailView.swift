@@ -8,17 +8,21 @@
 import SwiftUI
 
 struct ScanDetailView: View {
+    @EnvironmentObject var bleManager: CoreBluetoothViewModel
+    
     @Binding var isRootViewActive: Bool
     
     var body: some View {
         VStack {
             Button(action: {
                 isRootViewActive = false
+                bleManager.disconnectPeripheral()
+                bleManager.stopScan()
             }) {
                 UIButtonView(text: "切断する")
             }
             
-            Text("Bluetooth設定がOFFです")
+            Text(bleManager.isBluePowerOn ? "" : "Bluetooth設定がOFFです")
                 .padding(10)
             
             CharacteriticCells()
@@ -41,10 +45,42 @@ struct ScanDetailView: View {
     }
     
     struct CharacteriticCells: View {
+        @EnvironmentObject var bleManager: CoreBluetoothViewModel
+        
         var body: some View {
             List {
-                ForEach(0..<1) { num in
-                    Text("Characteritic Name\(num)")
+                ForEach(0..<bleManager.foundService.count, id: \.self) { num in
+                    Section(header: Text("\(bleManager.foundService[num].uuid.uuidString)")) {
+                        ForEach(0..<bleManager.foundCharacteristic.count, id: \.self) { j in
+                            if bleManager.foundService[num].uuid == bleManager.foundCharacteristic[j].service.uuid {
+                                Button(action: {
+                                    //write action
+                                }) {
+                                    VStack {
+                                        HStack {
+                                            Text("uuid: \(bleManager.foundCharacteristic[num].uuid.uuidString)")
+                                                .font(.system(size: 14))
+                                                .padding(.bottom, 2)
+                                            Spacer()
+                                        }
+                                        
+                                        HStack {
+                                            Text("description: \(bleManager.foundCharacteristic[num].description)")
+                                                .font(.system(size: 14))
+                                                .padding(.bottom, 2)
+                                            Spacer()
+                                        }
+                                        HStack {
+                                            Text("value: \(bleManager.foundCharacteristic[num].readValue)")
+                                                .font(.system(size: 14))
+                                                .padding(.bottom, 2)
+                                            Spacer()
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

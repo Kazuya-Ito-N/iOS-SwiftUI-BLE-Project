@@ -15,7 +15,8 @@ class CoreBluetoothViewModel: NSObject, ObservableObject, CBPeripheralProtocolDe
     @Published var isConnected: Bool = false
     
     @Published var foundPeripherals: [Peripheral] = []
-    @Published var peripheralService = PeripheralService()
+    @Published var foundService: [Services] = []
+    @Published var foundCharacteristic: [Characteristic] = []
     
     private var centralManager: CBCentralManagerProtocol!
     private var connectedPeripheral: Peripheral!
@@ -29,6 +30,11 @@ class CoreBluetoothViewModel: NSObject, ObservableObject, CBPeripheralProtocolDe
         #else
         centralManager = CBCentralManager(delegate: self, queue: nil, options: [CBCentralManagerOptionShowPowerAlertKey: true])
         #endif
+    }
+    
+    private func resetConfigure() {
+        foundPeripherals = []
+        foundCharacteristic = []
     }
     
     //Control Func
@@ -48,6 +54,7 @@ class CoreBluetoothViewModel: NSObject, ObservableObject, CBPeripheralProtocolDe
     
     func connectPeripheral(_ selectPeripheral: Peripheral?) {
         guard let connectPeripheral = selectPeripheral else { return }
+        connectedPeripheral = selectPeripheral
         centralManager.connect(connectPeripheral.peripheral, options: nil)
     }
     
@@ -87,7 +94,10 @@ class CoreBluetoothViewModel: NSObject, ObservableObject, CBPeripheralProtocolDe
     }
     
     func didConnect(_ central: CBCentralManagerProtocol, peripheral: CBPeripheralProtocol) {
+        guard let connectedPeripheral = connectedPeripheral else { return }
         isConnected = true
+        connectedPeripheral.peripheral.delegate = self
+        connectedPeripheral.peripheral.discoverServices(nil)
     }
     
     func didFailToConnect(_ central: CBCentralManagerProtocol, peripheral: CBPeripheralProtocol, error: Error?) {
@@ -95,7 +105,8 @@ class CoreBluetoothViewModel: NSObject, ObservableObject, CBPeripheralProtocolDe
     }
     
     func didDisconnect(_ central: CBCentralManagerProtocol, peripheral: CBPeripheralProtocol, error: Error?) {
-        
+        print("disconnect")
+        resetConfigure()
     }
     
     func connectionEventDidOccur(_ central: CBCentralManagerProtocol, event: CBConnectionEvent, peripheral: CBPeripheralProtocol) {
@@ -113,19 +124,32 @@ class CoreBluetoothViewModel: NSObject, ObservableObject, CBPeripheralProtocolDe
     //MARK: CoreBluetooth Peripheral Delegate Func
     func didDiscoverServices(_ peripheral: CBPeripheralProtocol, error: Error?) {
         peripheral.services?.forEach { service in
-            peripheralService.discoverServices(peripheral, service)
+            let setService = Services(_uuid: service.uuid, _service: service)
+            
+            foundService.append(setService)
+            peripheral.discoverCharacteristics(nil, for: service)
         }
     }
     
     func didDiscoverCharacteristics(_ peripheral: CBPeripheralProtocol, service: CBService, error: Error?) {
         service.characteristics?.forEach { characteristic in
-            peripheralService.discoverReadableCharacteristics(peripheral, service, characteristic)
+            let setCharacteristic: Characteristic = Characteristic(_characteristic: characteristic,
+                                                                   _description: "",
+                                                                   _uuid: characteristic.uuid,
+                                                                   _readValue: "",
+                                                                   _service: characteristic.service)
+            foundCharacteristic.append(setCharacteristic)
+            peripheral.readValue(for: characteristic)
         }
     }
     
     func didUpdateValue(_ peripheral: CBPeripheralProtocol, characteristic: CBCharacteristic, error: Error?) {
         guard let characteristicValue = characteristic.value else { return }
-        peripheralService.updateValueCharacteristics(peripheral, characteristic, characteristicValue)
+        
+        if let index = foundCharacteristic.firstIndex(where: { $0.uuid.uuidString == characteristic.uuid.uuidString }) {
+            
+            foundCharacteristic[index].readValue = characteristicValue.map({ String(format:"%02x", $0) }).joined()
+        }
     }
     
     func didWriteValue(_ peripheral: CBPeripheralProtocol, descriptor: CBDescriptor, error: Error?) {

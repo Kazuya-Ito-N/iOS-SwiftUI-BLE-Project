@@ -25,9 +25,9 @@ class Characteristic: Identifiable {
         
         id = UUID()
         characteristic = _characteristic
-        description = _description
+        description = _description == "" ? "NoName" : _description
         uuid = _uuid
-        readValue = _readValue
+        readValue = _readValue == "" ? "NoData" : _readValue
         service = _service
     }
 }
