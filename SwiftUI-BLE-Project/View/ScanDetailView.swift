@@ -59,20 +59,20 @@ struct ScanDetailView: View {
                                 }) {
                                     VStack {
                                         HStack {
-                                            Text("uuid: \(bleManager.foundCharacteristic[num].uuid.uuidString)")
+                                            Text("uuid: \(bleManager.foundCharacteristic[j].uuid.uuidString)")
                                                 .font(.system(size: 14))
                                                 .padding(.bottom, 2)
                                             Spacer()
                                         }
                                         
                                         HStack {
-                                            Text("description: \(bleManager.foundCharacteristic[num].description)")
+                                            Text("description: \(bleManager.foundCharacteristic[j].description)")
                                                 .font(.system(size: 14))
                                                 .padding(.bottom, 2)
                                             Spacer()
                                         }
                                         HStack {
-                                            Text("value: \(bleManager.foundCharacteristic[num].readValue)")
+                                            Text("value: \(bleManager.foundCharacteristic[j].readValue)")
                                                 .font(.system(size: 14))
                                                 .padding(.bottom, 2)
                                             Spacer()
