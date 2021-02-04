@@ -28,6 +28,7 @@ struct ScanDetailView: View {
             CharacteriticCells()
        
             .navigationBarTitle("コネクト結果")
+            .navigationBarBackButtonHidden(true)
         }
     }
     

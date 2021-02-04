@@ -81,9 +81,9 @@
 			isa = PBXGroup;
 			children = (
 				7134F37F25C93B7D00DAD350 /* Mock.swift */,
+				7134F37C25C93B7D00DAD350 /* CBCentralManagerMock.swift */,
 				7134F38025C93B7D00DAD350 /* CBPeripheralMock.swift */,
 				7134F39825C940DB00DAD350 /* ServiceCharacteristicsMock.swift */,
-				7134F37C25C93B7D00DAD350 /* CBCentralManagerMock.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";

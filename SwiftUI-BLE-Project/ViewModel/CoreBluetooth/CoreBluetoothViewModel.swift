@@ -34,6 +34,7 @@ class CoreBluetoothViewModel: NSObject, ObservableObject, CBPeripheralProtocolDe
     
     private func resetConfigure() {
         foundPeripherals = []
+        foundService = []
         foundCharacteristic = []
     }
     
@@ -75,13 +76,24 @@ class CoreBluetoothViewModel: NSObject, ObservableObject, CBPeripheralProtocolDe
     func didDiscover(_ central: CBCentralManagerProtocol, peripheral: CBPeripheralProtocol, advertisementData: [String : Any], rssi: NSNumber) {
         if rssi.intValue >= 0 { return }
         
+        let peripheralName = advertisementData[CBAdvertisementDataLocalNameKey] as? String ?? nil
+        var _name = "NoName"
+        
+        if peripheralName != nil {
+            _name = String(peripheralName!)
+        } else if peripheral.name != nil {
+            _name = String(peripheral.name!)
+        }
+      
         let foundPeripheral: Peripheral = Peripheral(_peripheral: peripheral,
+                                                     _name: _name,
                                                      _advData: advertisementData,
                                                      _rssi: rssi,
                                                      _discoverCount: 0)
         
         if let index = foundPeripherals.firstIndex(where: { $0.peripheral.identifier.uuidString == peripheral.identifier.uuidString }) {
             if foundPeripherals[index].discoverCount % 50 == 0 {
+                foundPeripherals[index].name = _name
                 foundPeripherals[index].rssi = rssi.intValue
                 foundPeripherals[index].discoverCount += 1
             } else {
