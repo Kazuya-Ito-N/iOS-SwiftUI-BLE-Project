@@ -10,13 +10,13 @@ import CoreBluetooth
 
 class CoreBluetoothViewModel: NSObject, ObservableObject, CBPeripheralProtocolDelegate, CBCentralManagerProtocolDelegate {
     
-    @Published var isBluePowerOn: Bool = false
+    @Published var isBlePower: Bool = false
     @Published var isSearching: Bool = false
     @Published var isConnected: Bool = false
     
     @Published var foundPeripherals: [Peripheral] = []
-    @Published var foundService: [Services] = []
-    @Published var foundCharacteristic: [Characteristic] = []
+    @Published var foundServices: [Service] = []
+    @Published var foundCharacteristics: [Characteristic] = []
     
     private var centralManager: CBCentralManagerProtocol!
     private var connectedPeripheral: Peripheral!
@@ -34,8 +34,8 @@ class CoreBluetoothViewModel: NSObject, ObservableObject, CBPeripheralProtocolDe
     
     private func resetConfigure() {
         foundPeripherals = []
-        foundService = []
-        foundCharacteristic = []
+        foundServices = []
+        foundCharacteristics = []
     }
     
     //Control Func
@@ -67,9 +67,9 @@ class CoreBluetoothViewModel: NSObject, ObservableObject, CBPeripheralProtocolDe
     //MARK: CoreBluetooth CentralManager Delegete Func
     func didUpdateState(_ central: CBCentralManagerProtocol) {
         if central.state == .poweredOn {
-            isBluePowerOn = true
+            isBlePower = true
         } else {
-            isBluePowerOn = false
+            isBlePower = false
         }
     }
     
@@ -136,9 +136,9 @@ class CoreBluetoothViewModel: NSObject, ObservableObject, CBPeripheralProtocolDe
     //MARK: CoreBluetooth Peripheral Delegate Func
     func didDiscoverServices(_ peripheral: CBPeripheralProtocol, error: Error?) {
         peripheral.services?.forEach { service in
-            let setService = Services(_uuid: service.uuid, _service: service)
+            let setService = Service(_uuid: service.uuid, _service: service)
             
-            foundService.append(setService)
+            foundServices.append(setService)
             peripheral.discoverCharacteristics(nil, for: service)
         }
     }
@@ -150,7 +150,7 @@ class CoreBluetoothViewModel: NSObject, ObservableObject, CBPeripheralProtocolDe
                                                                    _uuid: characteristic.uuid,
                                                                    _readValue: "",
                                                                    _service: characteristic.service)
-            foundCharacteristic.append(setCharacteristic)
+            foundCharacteristics.append(setCharacteristic)
             peripheral.readValue(for: characteristic)
         }
     }
@@ -158,9 +158,9 @@ class CoreBluetoothViewModel: NSObject, ObservableObject, CBPeripheralProtocolDe
     func didUpdateValue(_ peripheral: CBPeripheralProtocol, characteristic: CBCharacteristic, error: Error?) {
         guard let characteristicValue = characteristic.value else { return }
         
-        if let index = foundCharacteristic.firstIndex(where: { $0.uuid.uuidString == characteristic.uuid.uuidString }) {
+        if let index = foundCharacteristics.firstIndex(where: { $0.uuid.uuidString == characteristic.uuid.uuidString }) {
             
-            foundCharacteristic[index].readValue = characteristicValue.map({ String(format:"%02x", $0) }).joined()
+            foundCharacteristics[index].readValue = characteristicValue.map({ String(format:"%02x", $0) }).joined()
         }
     }
     

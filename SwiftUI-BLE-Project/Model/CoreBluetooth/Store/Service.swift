@@ -1,5 +1,5 @@
 //
-//  Services.swift
+//  Service.swift
 //  SwiftUI-BLE-Project
 //
 //  Created by kazuya ito on 2021/02/03.
@@ -8,7 +8,7 @@
 import Foundation
 import CoreBluetooth
 
-class Services: Identifiable {
+class Service: Identifiable {
     var id: UUID
     var uuid: CBUUID
     var service: CBService

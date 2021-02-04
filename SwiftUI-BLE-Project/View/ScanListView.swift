@@ -25,7 +25,7 @@ struct ScanListView: View {
                 UIButtonView(text: bleManager.isSearching ? "スキャンを停止する" : "スキャンを開始する")
             }
             
-            Text(bleManager.isBluePowerOn ? "" : "Bluetooth設定がOFFです")
+            Text(bleManager.isBlePower ? "" : "Bluetooth設定がOFFです")
                 .padding(10)
             
             PeripheralCells()
