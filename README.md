@@ -1,5 +1,5 @@
 # Project
-[ SwiftUI × CoreBluetooth ] のコードサンプルです。
+* SwiftUI × CoreBluetooth Sample Code ...
 # Built With
 * CoreBluetooth
 # Versioning
@@ -9,4 +9,5 @@
 * SwiftUI -- 2.0
 # Authors
 * kazuya ito
+
 
