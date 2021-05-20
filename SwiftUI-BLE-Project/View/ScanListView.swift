@@ -51,18 +51,22 @@ struct ScanListView: View {
         @EnvironmentObject var bleManager: CoreBluetoothViewModel
         
         var body: some View {
-            List {
-                ForEach(0..<bleManager.foundPeripherals.count, id: \.self) { num in
-                    Button(action: {
-                        bleManager.connectPeripheral(bleManager.foundPeripherals[num])
-                    }) {
-                        HStack {
-                            Text("\(bleManager.foundPeripherals[num].name)")
-                            Spacer()
-                            Text("\(bleManager.foundPeripherals[num].rssi) dBm")
+            if bleManager.foundPeripherals.count > 0 && !bleManager.isConnected {
+                List {
+                    ForEach(0..<bleManager.foundPeripherals.count, id: \.self) { num in
+                        Button(action: {
+                            bleManager.connectPeripheral(bleManager.foundPeripherals[num])
+                        }) {
+                            HStack {
+                                Text("\(bleManager.foundPeripherals[num].name)")
+                                Spacer()
+                                Text("\(bleManager.foundPeripherals[num].rssi) dBm")
+                            }
                         }
                     }
                 }
+            } else {
+                List { }
             }
         }
     }

@@ -70,7 +70,7 @@
 		7134F37925C93B7D00DAD350 /* CoreBluetooth */ = {
 			isa = PBXGroup;
 			children = (
-				7134F38125C93B7D00DAD350 /* CBPeripheralProtcolDelegate.swift */,
+				71CC42732656078C004FBCD1 /* Delegate */,
 				7134F3BE25CA414800DAD350 /* Store */,
 				7134F37B25C93B7D00DAD350 /* Mock */,
 			);
@@ -178,6 +178,14 @@
 				715D90E725C9086700F19093 /* Assets.xcassets */,
 			);
 			path = Resouce;
+			sourceTree = "<group>";
+		};
+		71CC42732656078C004FBCD1 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				7134F38125C93B7D00DAD350 /* CBPeripheralProtcolDelegate.swift */,
+			);
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
