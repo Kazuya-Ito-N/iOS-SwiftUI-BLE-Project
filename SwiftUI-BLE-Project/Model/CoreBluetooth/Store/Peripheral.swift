@@ -5,7 +5,6 @@
 //  Created by kazuya ito on 2021/02/02.
 //
 
-import Foundation
 import CoreBluetooth
 
 class Peripheral: Identifiable {
@@ -16,7 +15,11 @@ class Peripheral: Identifiable {
     var rssi: Int
     var discoverCount: Int
     
-    init(_peripheral: CBPeripheralProtocol, _name: String, _advData: [String : Any], _rssi: NSNumber, _discoverCount: Int) {
+    init(_peripheral: CBPeripheralProtocol,
+         _name: String,
+         _advData: [String : Any],
+         _rssi: NSNumber,
+         _discoverCount: Int) {
         id = UUID()
         peripheral = _peripheral
         name = _name

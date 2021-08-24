@@ -5,7 +5,6 @@
 //  Created by kazuya ito on 2021/02/03.
 //
 
-import Foundation
 import CoreBluetooth
 
 class Service: Identifiable {

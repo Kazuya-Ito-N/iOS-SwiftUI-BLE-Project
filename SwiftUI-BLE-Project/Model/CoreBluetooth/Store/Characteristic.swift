@@ -5,8 +5,6 @@
 //  Created by kazuya ito on 2020/10/29.
 //
 
-
-import Foundation
 import CoreBluetooth
 
 class Characteristic: Identifiable {

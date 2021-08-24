@@ -5,7 +5,7 @@
 //  Created by kazuya ito on 2021/02/02.
 //
 
-import Foundation
+import SwiftUI
 import CoreBluetooth
 
 class CoreBluetoothViewModel: NSObject, ObservableObject, CBPeripheralProtocolDelegate, CBCentralManagerProtocolDelegate {
@@ -33,9 +33,14 @@ class CoreBluetoothViewModel: NSObject, ObservableObject, CBPeripheralProtocolDe
     }
     
     private func resetConfigure() {
-        foundPeripherals = []
-        foundServices = []
-        foundCharacteristics = []
+        withAnimation {
+            isSearching = false
+            isConnected = false
+            
+            foundPeripherals = []
+            foundServices = []
+            foundCharacteristics = []
+        }
     }
     
     //Control Func

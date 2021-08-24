@@ -110,8 +110,8 @@
             filePath = "SwiftUI-BLE-Project/ViewModel/CoreBluetooth/CoreBluetoothViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "didUpdateState(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -126,8 +126,8 @@
             filePath = "SwiftUI-BLE-Project/ViewModel/CoreBluetooth/CoreBluetoothViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "didUpdateState(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -230,22 +230,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A0AC3847-B361-472D-8E87-D7327597DAB3"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftUI-BLE-Project/View/ContentView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "0C5B6135-6AC6-40A2-845E-4E6A5D9CEF89"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -253,8 +237,8 @@
             filePath = "SwiftUI-BLE-Project/ViewModel/CoreBluetooth/CoreBluetoothViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "didDiscoverServices(_:error:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -269,8 +253,8 @@
             filePath = "SwiftUI-BLE-Project/ViewModel/CoreBluetooth/CoreBluetoothViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "didConnect(_:peripheral:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -285,8 +269,8 @@
             filePath = "SwiftUI-BLE-Project/ViewModel/CoreBluetooth/CoreBluetoothViewModelExtension.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "centralManager(_:didDiscover:advertisementData:rssi:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -301,8 +285,8 @@
             filePath = "SwiftUI-BLE-Project/ViewModel/CoreBluetooth/CoreBluetoothViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "didDiscover(_:peripheral:advertisementData:rssi:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -317,8 +301,8 @@
             filePath = "SwiftUI-BLE-Project/ViewModel/CoreBluetooth/CoreBluetoothViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "didDiscover(_:peripheral:advertisementData:rssi:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -333,8 +317,8 @@
             filePath = "SwiftUI-BLE-Project/ViewModel/CoreBluetooth/CoreBluetoothViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "didDiscoverCharacteristics(_:service:error:)"
             landmarkType = "7">
          </BreakpointContent>

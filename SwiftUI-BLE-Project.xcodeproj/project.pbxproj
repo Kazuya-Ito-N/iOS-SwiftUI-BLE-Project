@@ -13,7 +13,7 @@
 		7134F38825C93B7D00DAD350 /* CBPeripheralMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134F38025C93B7D00DAD350 /* CBPeripheralMock.swift */; };
 		7134F38925C93B7D00DAD350 /* CBPeripheralProtcolDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134F38125C93B7D00DAD350 /* CBPeripheralProtcolDelegate.swift */; };
 		7134F38A25C93B7D00DAD350 /* Characteristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134F38225C93B7D00DAD350 /* Characteristic.swift */; };
-		7134F39325C93FE100DAD350 /* CoreBluetoothViewModelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134F39225C93FE100DAD350 /* CoreBluetoothViewModelExtension.swift */; };
+		7134F39325C93FE100DAD350 /* CoreBluetoothViewModelExtension+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134F39225C93FE100DAD350 /* CoreBluetoothViewModelExtension+Delegate.swift */; };
 		7134F39925C940DC00DAD350 /* ServiceCharacteristicsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134F39825C940DB00DAD350 /* ServiceCharacteristicsMock.swift */; };
 		7134F3A925CA3AC900DAD350 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134F3A825CA3AC900DAD350 /* Service.swift */; };
 		7134F3B625CA3F4300DAD350 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7134F3B025CA3F4300DAD350 /* README.md */; };
@@ -22,8 +22,9 @@
 		715D90E825C9086700F19093 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 715D90E725C9086700F19093 /* Assets.xcassets */; };
 		715D90EB25C9086700F19093 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 715D90EA25C9086700F19093 /* Preview Assets.xcassets */; };
 		715D90F825C90B6C00F19093 /* CoreBluetoothViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D90F725C90B6C00F19093 /* CoreBluetoothViewModel.swift */; };
-		715D910325C9229000F19093 /* ScanListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D910225C9229000F19093 /* ScanListView.swift */; };
-		715D910725C9229A00F19093 /* ScanDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D910625C9229A00F19093 /* ScanDetailView.swift */; };
+		715D910325C9229000F19093 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D910225C9229000F19093 /* ListView.swift */; };
+		715D910725C9229A00F19093 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D910625C9229A00F19093 /* DetailView.swift */; };
+		71A6E9A226D4115600B400BC /* CoreBluetoothViewModelExtension+SwiftUIView.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A6E9A126D4115600B400BC /* CoreBluetoothViewModelExtension+SwiftUIView.swift.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +34,7 @@
 		7134F38025C93B7D00DAD350 /* CBPeripheralMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPeripheralMock.swift; sourceTree = "<group>"; };
 		7134F38125C93B7D00DAD350 /* CBPeripheralProtcolDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPeripheralProtcolDelegate.swift; sourceTree = "<group>"; };
 		7134F38225C93B7D00DAD350 /* Characteristic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Characteristic.swift; sourceTree = "<group>"; };
-		7134F39225C93FE100DAD350 /* CoreBluetoothViewModelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreBluetoothViewModelExtension.swift; sourceTree = "<group>"; };
+		7134F39225C93FE100DAD350 /* CoreBluetoothViewModelExtension+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreBluetoothViewModelExtension+Delegate.swift"; sourceTree = "<group>"; };
 		7134F39825C940DB00DAD350 /* ServiceCharacteristicsMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCharacteristicsMock.swift; sourceTree = "<group>"; };
 		7134F3A825CA3AC900DAD350 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		7134F3B025CA3F4300DAD350 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -44,8 +45,9 @@
 		715D90EA25C9086700F19093 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		715D90EC25C9086700F19093 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		715D90F725C90B6C00F19093 /* CoreBluetoothViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreBluetoothViewModel.swift; sourceTree = "<group>"; };
-		715D910225C9229000F19093 /* ScanListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanListView.swift; sourceTree = "<group>"; };
-		715D910625C9229A00F19093 /* ScanDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanDetailView.swift; sourceTree = "<group>"; };
+		715D910225C9229000F19093 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		715D910625C9229A00F19093 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		71A6E9A126D4115600B400BC /* CoreBluetoothViewModelExtension+SwiftUIView.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreBluetoothViewModelExtension+SwiftUIView.swift.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				715D90F725C90B6C00F19093 /* CoreBluetoothViewModel.swift */,
-				7134F39225C93FE100DAD350 /* CoreBluetoothViewModelExtension.swift */,
+				7134F39225C93FE100DAD350 /* CoreBluetoothViewModelExtension+Delegate.swift */,
+				71A6E9A126D4115600B400BC /* CoreBluetoothViewModelExtension+SwiftUIView.swift.swift */,
 			);
 			path = CoreBluetooth;
 			sourceTree = "<group>";
@@ -157,8 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				715D90E525C9086500F19093 /* ContentView.swift */,
-				715D910225C9229000F19093 /* ScanListView.swift */,
-				715D910625C9229A00F19093 /* ScanDetailView.swift */,
+				715D910225C9229000F19093 /* ListView.swift */,
+				715D910625C9229A00F19093 /* DetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -264,12 +267,13 @@
 				7134F3A925CA3AC900DAD350 /* Service.swift in Sources */,
 				715D90E625C9086500F19093 /* ContentView.swift in Sources */,
 				7134F36B25C934A800DAD350 /* Peripheral.swift in Sources */,
-				715D910325C9229000F19093 /* ScanListView.swift in Sources */,
+				715D910325C9229000F19093 /* ListView.swift in Sources */,
 				7134F38825C93B7D00DAD350 /* CBPeripheralMock.swift in Sources */,
-				7134F39325C93FE100DAD350 /* CoreBluetoothViewModelExtension.swift in Sources */,
+				71A6E9A226D4115600B400BC /* CoreBluetoothViewModelExtension+SwiftUIView.swift.swift in Sources */,
+				7134F39325C93FE100DAD350 /* CoreBluetoothViewModelExtension+Delegate.swift in Sources */,
 				715D90E425C9086500F19093 /* SwiftUI_BLE_ProjectApp.swift in Sources */,
 				7134F39925C940DC00DAD350 /* ServiceCharacteristicsMock.swift in Sources */,
-				715D910725C9229A00F19093 /* ScanDetailView.swift in Sources */,
+				715D910725C9229A00F19093 /* DetailView.swift in Sources */,
 				7134F38A25C93B7D00DAD350 /* Characteristic.swift in Sources */,
 				715D90F825C90B6C00F19093 /* CoreBluetoothViewModel.swift in Sources */,
 			);
@@ -399,7 +403,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI-BLE-Project/Preview Content\"";
 				DEVELOPMENT_TEAM = V838XQ8S9F;
 				ENABLE_PREVIEWS = YES;
@@ -411,6 +417,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braveridge.SwiftUI-BLE-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -421,7 +428,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI-BLE-Project/Preview Content\"";
 				DEVELOPMENT_TEAM = V838XQ8S9F;
 				ENABLE_PREVIEWS = YES;
@@ -433,6 +442,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braveridge.SwiftUI-BLE-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
